@@ -137,3 +137,22 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Playwright
+e2e/.auth/
+playwright-report/
+test-results/
+e2e/tests/__snapshots__/
+
+# .NET build output
+backend/bin/
+backend/obj/
+
+# Frontend build
+frontend/dist/
+backend/.idea/.idea.ProductCatalog/.idea/.gitignore
+backend/.idea/.idea.ProductCatalog/.idea/vcs.xml
+backend/.idea/.idea.ProductCatalog/.idea/.name
+backend/.idea/.idea.ProductCatalog/.idea/copilot.data.migration.agent.xml
+backend/.idea/.idea.ProductCatalog/.idea/encodings.xml
+backend/.idea/.idea.ProductCatalog/.idea/indexLayout.xml
