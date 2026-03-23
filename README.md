@@ -1,6 +1,6 @@
-# Product Catalog — Playwright E2E Teaching Reference
+# Product Catalog — Playwright E2E Reference
 
-A fully working demo app built to teach **Playwright E2E testing in TypeScript** from scratch.
+A fully working demo app built to **Playwright E2E testing in TypeScript** from scratch.
 Every concept is demonstrated in a real running application, with richly commented test files
 you can copy directly into production projects.
 
