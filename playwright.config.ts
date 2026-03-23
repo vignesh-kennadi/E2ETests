@@ -1,7 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
 /**
- * PLAYWRIGHT CONFIGURATION — Teaching Reference
+ * PLAYWRIGHT CONFIGURATION — Reference Guide
  *
  * This file controls every aspect of how Playwright runs tests.
  * Read the comments carefully — each setting has a "why" explanation.

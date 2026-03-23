@@ -75,7 +75,7 @@ Work through these four files first. They cover the fundamentals that every test
 
 ### Step 1 — Navigation (`01-navigation.spec.ts`)
 
-**What it teaches**: How to open pages, wait for them to load, move through browser history.
+**What it covers**: How to open pages, wait for them to load, move through browser history.
 
 **Key APIs:**
 ```typescript
@@ -101,7 +101,7 @@ npx playwright test 01-navigation.spec.ts --project=chromium
 
 ### Step 2 — Locators (`02-locators.spec.ts`)
 
-**What it teaches**: How to find elements on a page. This is the most important skill in Playwright.
+**What it covers**: How to find elements on a page. This is the most important skill in Playwright.
 
 **Decision tree — pick the first one that applies:**
 
@@ -150,7 +150,7 @@ npx playwright test 02-locators.spec.ts --project=chromium
 
 ### Step 3 — Assertions (`03-assertions.spec.ts`)
 
-**What it teaches**: How to verify the page is in the correct state.
+**What it covers**: How to verify the page is in the correct state.
 
 **Critical concept — web-first assertions:**
 Playwright assertions automatically *retry* until the condition is true or a timeout is reached.
@@ -207,7 +207,7 @@ npx playwright test 03-assertions.spec.ts --project=chromium
 
 ### Step 4 — Interactions (`04-interactions.spec.ts`)
 
-**What it teaches**: How to simulate user actions — typing, clicking, selecting, uploading files.
+**What it covers**: How to simulate user actions — typing, clicking, selecting, uploading files.
 
 **Key interactions:**
 ```typescript
@@ -256,7 +256,7 @@ Once you're comfortable with the basics, these files cover patterns you'll use i
 
 ### Step 5 — Network (`05-network.spec.ts`)
 
-**What it teaches**: How to intercept, wait for, and mock API calls.
+**What it covers**: How to intercept, wait for, and mock API calls.
 
 **When to use network tools:**
 - **`waitForResponse`**: Sync a UI assertion with the API call that produced the data
@@ -297,7 +297,7 @@ npx playwright test 05-network.spec.ts --project=chromium
 
 ### Step 6 — Authentication (`06-auth-storage-state.spec.ts`)
 
-**What it teaches**: How to handle login state efficiently across all tests.
+**What it covers**: How to handle login state efficiently across all tests.
 
 **The problem**: Logging in via the UI before every test is slow and fragile.
 
@@ -339,7 +339,7 @@ npx playwright test 06-auth-storage-state.spec.ts --project=chromium
 
 ### Step 7 — Page Object Model (`07-page-object-model.spec.ts`)
 
-**What it teaches**: How to organise test code so it doesn't become a mess.
+**What it covers**: How to organise test code so it doesn't become a mess.
 
 **The problem**: Tests with raw `page.getByTestId(...)` calls scattered everywhere are hard to
 maintain. When a selector changes, you update it in every test.
@@ -389,7 +389,7 @@ npx playwright test 07-page-object-model.spec.ts --project=chromium
 
 ### Step 8 — Fixtures (`08-fixtures.spec.ts`)
 
-**What it teaches**: How to set up and tear down test dependencies automatically and reliably.
+**What it covers**: How to set up and tear down test dependencies automatically and reliably.
 
 **The problem**: Creating test data in `beforeEach` and cleaning it in `afterEach` is error-prone
 — if the test throws, cleanup might not run.
@@ -438,7 +438,7 @@ mistakes, and advanced features.
 
 ### Step 9 — Parallel Isolation (`09-parallel-isolation.spec.ts`)
 
-**What it teaches**: How Playwright runs tests concurrently and how to keep them independent.
+**What it covers**: How Playwright runs tests concurrently and how to keep them independent.
 
 **How parallelism works:**
 ```
@@ -476,7 +476,7 @@ npx playwright test 09-parallel-isolation.spec.ts --project=chromium
 
 ### Step 10 — Anti-Patterns (`10-anti-patterns.spec.ts`)
 
-**What it teaches**: The 12 most common mistakes, shown side-by-side with the correct approach.
+**What it covers**: The 12 most common mistakes, shown side-by-side with the correct approach.
 
 **Quick reference — things to avoid:**
 
@@ -500,7 +500,7 @@ npx playwright test 10-anti-patterns.spec.ts --project=chromium
 
 ### Step 11 — Advanced Features (`11-advanced.spec.ts`)
 
-**What it teaches**: Multi-tab scenarios, injecting JavaScript, parameterised tests, visual regression, custom matchers, mobile viewports, and test tags.
+**What it covers**: Multi-tab scenarios, injecting JavaScript, parameterised tests, visual regression, custom matchers, mobile viewports, and test tags.
 
 **Highlights:**
 
@@ -553,7 +553,7 @@ npx playwright test 11-advanced.spec.ts --project=chromium
 
 ### Step 12 — Pure API Tests (`12-api-testing.spec.ts`)
 
-**What it teaches**: Using Playwright's `request` fixture to test the backend API directly —
+**What it covers**: Using Playwright's `request` fixture to test the backend API directly —
 no browser, no UI, just HTTP.
 
 **Why use Playwright for API tests?**
@@ -598,7 +598,7 @@ npx playwright test 12-api-testing.spec.ts --project=chromium
 
 ### Step 13 — End-to-End User Journey (`13-e2e-user-journey.spec.ts`)
 
-**What it teaches**: How all the pieces fit together in a real workflow. This file covers the
+**What it covers**: How all the pieces fit together in a real workflow. This file covers the
 complete user journey in one serial test suite.
 
 **The journey:**

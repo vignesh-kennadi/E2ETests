@@ -1,4 +1,4 @@
-# Lessons Learned — Playwright E2E Teaching Reference
+# Lessons Learned — Playwright E2E Guide
 
 This document captures the problems encountered during implementation and the approaches tried
 before arriving at the final working solution. It's a living record of *why* things are the

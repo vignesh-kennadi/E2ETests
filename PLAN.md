@@ -1,4 +1,4 @@
-# Implementation Plan: Product Catalog — Playwright Teaching Reference
+# Implementation Plan: Product Catalog — Playwright Guide
 
 > This is the original implementation plan for the E2ETests project.
 > It was written before any code was produced and served as the specification.
