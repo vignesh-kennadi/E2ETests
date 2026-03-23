@@ -1,0 +1,86 @@
+name: Playwright Tests
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 9
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "9.x"
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      # Install root npm dependencies (Playwright)
+      - name: Install root dependencies
+        run: npm ci
+
+      # Install frontend dependencies
+      - name: Install frontend dependencies
+        run: npm ci --prefix frontend
+
+      # Install Playwright browsers + OS dependencies
+      # --with-deps installs required OS packages (libglib, libnss, etc.)
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      # Run all tests
+      # CI=true enables: retries:1, workers:2, forbidOnly
+      - name: Run Playwright tests
+        run: npm test
+        env:
+          CI: true
+          BASE_URL: http://localhost:5173
+          API_BASE_URL: http://localhost:5000
+
+      # Upload the HTML report on failure so you can download and review it
+      - name: Upload Playwright report
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report-${{ github.run_id }}
+          path: playwright-report/
+          retention-days: 14
+
+      # Upload test results (JUnit XML) for CI test summary
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results-${{ github.run_id }}
+          path: test-results/
+          retention-days: 7
+
+  # Example: run tests in parallel across 3 shards (split test suite)
+  # Uncomment to use sharding for large test suites
+  # test-sharded:
+  #   runs-on: ubuntu-latest
+  #   strategy:
+  #     matrix:
+  #       shard: [1, 2, 3]
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: actions/setup-dotnet@v4
+  #       with: { dotnet-version: "9.x" }
+  #     - uses: actions/setup-node@v4
+  #       with: { node-version: "20" }
+  #     - run: npm ci && npm ci --prefix frontend
+  #     - run: npx playwright install --with-deps
+  #     - run: npx playwright test --shard=${{ matrix.shard }}/3
+  #       env:
+  #         CI: true

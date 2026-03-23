@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm test:*)",
+      "Bash(npx playwright:*)",
+      "Bash(ls /Users/vigneshkennadi/Documents/GitHub/E2ETests/backend/*.sln)",
+      "Bash(dotnet sln:*)",
+      "Bash(dotnet new:*)",
+      "Bash(ls *.sln*)"
+    ]
+  }
+}

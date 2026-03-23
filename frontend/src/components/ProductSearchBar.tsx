@@ -13,7 +13,7 @@ export function ProductSearchBar({ onSearch, initialQuery = '', initialCategory 
   const [category, setCategory] = useState(initialCategory);
 
   // Debounce: wait 300ms after the user stops typing before firing onSearch.
-  // Teaching point: this is a real-world pattern — don't fire an API call on every keystroke.
+  // : this is a real-world pattern — don't fire an API call on every keystroke.
   // In Playwright tests, use waitForResponse() to wait for the debounced request.
   useEffect(() => {
     const timer = setTimeout(() => onSearch(query, category), 300);
